@@ -1,0 +1,4 @@
+/* ── Disease Detector page ────────────────────────────────── */
+/* Inherits upload zone styles from components.css */
+
+.disease-result { margin-top: var(--space-xl); }

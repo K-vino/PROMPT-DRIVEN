@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disease Detector — AgriVision AI</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/disease-detector.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="../assets/images/logo.svg" alt="AgriVision AI" class="nav-logo" />
+      <span class="nav-title">AgriVision AI</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-link">Dashboard</a></li>
+      <li><a href="plant-identifier.html" class="nav-link">Plant ID</a></li>
+      <li><a href="disease-detector.html" class="nav-link active">Disease</a></li>
+      <li><a href="weather.html" class="nav-link">Weather</a></li>
+      <li><a href="ai-advisor.html" class="nav-link">AI Advisor</a></li>
+      <li><a href="crop-planner.html" class="nav-link">Crop Planner</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <main class="page-main">
+    <div class="page-header">
+      <h1>🔬 Plant Disease Detector</h1>
+      <p>Upload a leaf or plant image to detect diseases and get AI-powered treatment advice.</p>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="image-detect">Image Analysis</button>
+      <button class="tab-btn" data-tab="symptom-check">Symptom Checker</button>
+    </div>
+
+    <!-- Image Detection Tab -->
+    <div class="tab-panel active" id="tab-image-detect">
+      <div class="upload-zone" id="diseaseUploadZone">
+        <div class="upload-icon">🍂</div>
+        <p>Upload a photo of the affected plant</p>
+        <label for="diseaseFileInput" class="btn btn-secondary">Choose Image</label>
+        <input type="file" id="diseaseFileInput" accept="image/*" class="hidden" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="knownPlantName">Known plant name (optional)</label>
+        <input type="text" id="knownPlantName" class="input" placeholder="e.g. Tomato, Wheat, Rose…" />
+      </div>
+      <button id="detectDiseaseBtn" class="btn btn-primary btn-lg" disabled>
+        🔬 Detect Disease
+      </button>
+      <div id="diseaseImagePreview" class="image-preview hidden"></div>
+    </div>
+
+    <!-- Symptom Checker Tab -->
+    <div class="tab-panel" id="tab-symptom-check">
+      <div class="form-group">
+        <label class="form-label" for="symptomPlantName">Plant Name *</label>
+        <input type="text" id="symptomPlantName" class="input" placeholder="e.g. Rice, Maize, Apple…" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="symptoms">Describe the Symptoms *</label>
+        <textarea id="symptoms" class="textarea" rows="4"
+          placeholder="e.g. Yellow spots on leaves, wilting of lower leaves, white powdery coating…"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="imgDescription">Additional Visual Description (optional)</label>
+        <input type="text" id="imgDescription" class="input"
+          placeholder="e.g. Spots are circular with dark borders…" />
+      </div>
+      <button id="analyseSymptomBtn" class="btn btn-primary btn-lg">
+        🧠 Analyse Symptoms
+      </button>
+    </div>
+
+    <div id="diseaseResults" class="results-area hidden"></div>
+  </main>
+
+  <footer class="footer-simple"><p>&copy; 2025 AgriVision AI</p></footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/pages/disease-detector.js"></script>
+</body>
+</html>
