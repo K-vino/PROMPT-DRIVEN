@@ -1,0 +1,28 @@
+/* ── Crop Planner page ────────────────────────────────────── */
+
+/* Crop browser */
+.crop-filter-bar {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+.crop-filter-bar .input { flex: 1; min-width: 180px; }
+.select { padding: 0.6rem 1rem; }
+
+.crop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+/* Planner form */
+.planner-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+.plan-form { margin-top: var(--space-lg); }

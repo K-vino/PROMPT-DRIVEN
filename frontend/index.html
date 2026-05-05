@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriVision AI — Smart Agriculture Platform</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages/dashboard.css" />
+</head>
+<body>
+  <!-- ── Navigation ──────────────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="assets/images/logo.svg" alt="AgriVision AI Logo" class="nav-logo" />
+      <span class="nav-title">AgriVision AI</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">Dashboard</a></li>
+      <li><a href="pages/plant-identifier.html" class="nav-link">Plant ID</a></li>
+      <li><a href="pages/disease-detector.html" class="nav-link">Disease</a></li>
+      <li><a href="pages/weather.html" class="nav-link">Weather</a></li>
+      <li><a href="pages/ai-advisor.html" class="nav-link">AI Advisor</a></li>
+      <li><a href="pages/crop-planner.html" class="nav-link">Crop Planner</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Farm Smarter with<br /><span class="highlight">AI-Powered Insights</span>
+      </h1>
+      <p class="hero-subtitle">
+        Identify plants, detect diseases, forecast weather, and get personalised
+        crop advisory — all in one platform.
+      </p>
+      <div class="hero-actions">
+        <a href="pages/plant-identifier.html" class="btn btn-primary">Identify a Plant</a>
+        <a href="pages/ai-advisor.html" class="btn btn-secondary">Ask AI Advisor</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/images/hero-illustration.svg" alt="Smart farming illustration" />
+    </div>
+  </section>
+
+  <!-- ── Feature Cards ────────────────────────────────────────────────────── -->
+  <section class="features" id="features">
+    <h2 class="section-title">Platform Features</h2>
+    <div class="feature-grid">
+
+      <a href="pages/plant-identifier.html" class="feature-card">
+        <div class="feature-icon">🌿</div>
+        <h3 class="feature-title">Plant Identification</h3>
+        <p class="feature-desc">
+          Upload a photo and instantly identify any plant species using
+          AI-powered PlantNet analysis.
+        </p>
+        <span class="feature-cta">Try Now →</span>
+      </a>
+
+      <a href="pages/disease-detector.html" class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h3 class="feature-title">Disease Detection</h3>
+        <p class="feature-desc">
+          Detect plant diseases early from leaf images and receive treatment
+          recommendations powered by Gemini AI.
+        </p>
+        <span class="feature-cta">Detect →</span>
+      </a>
+
+      <a href="pages/weather.html" class="feature-card">
+        <div class="feature-icon">⛅</div>
+        <h3 class="feature-title">Weather Intelligence</h3>
+        <p class="feature-desc">
+          Get real-time weather and 5-day forecasts with AI-translated
+          farming advice tailored to your crops.
+        </p>
+        <span class="feature-cta">Check Weather →</span>
+      </a>
+
+      <a href="pages/ai-advisor.html" class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3 class="feature-title">AI Crop Advisor</h3>
+        <p class="feature-desc">
+          Chat with Gemini 2.5 Flash to get personalised crop management,
+          pest control, and soil health advice.
+        </p>
+        <span class="feature-cta">Ask AI →</span>
+      </a>
+
+      <a href="pages/crop-planner.html" class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h3 class="feature-title">Crop Planner</h3>
+        <p class="feature-desc">
+          Plan your planting schedule, manage your crop calendar, and
+          generate AI-optimised growth strategies.
+        </p>
+        <span class="feature-cta">Plan →</span>
+      </a>
+
+      <a href="pages/plant-identifier.html#care" class="feature-card">
+        <div class="feature-icon">💧</div>
+        <h3 class="feature-title">Plant Care Guide</h3>
+        <p class="feature-desc">
+          Search thousands of plants for watering schedules, sunlight needs,
+          and care difficulty ratings.
+        </p>
+        <span class="feature-cta">Explore →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Quick Weather Widget ─────────────────────────────────────────────── -->
+  <section class="quick-weather">
+    <h2 class="section-title">Current Weather</h2>
+    <div class="weather-widget-bar">
+      <div class="weather-search">
+        <input type="text" id="weatherCity" placeholder="Enter city name…" class="input" />
+        <button id="weatherSearchBtn" class="btn btn-primary">Search</button>
+      </div>
+      <div id="weatherWidgetResult" class="weather-result hidden"></div>
+    </div>
+  </section>
+
+  <!-- ── Stats ────────────────────────────────────────────────────────────── -->
+  <section class="stats">
+    <div class="stat-item">
+      <span class="stat-number">300K+</span>
+      <span class="stat-label">Plant Species</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">4</span>
+      <span class="stat-label">AI-Powered APIs</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">5-Day</span>
+      <span class="stat-label">Weather Forecast</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">24/7</span>
+      <span class="stat-label">AI Advisory</span>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/images/logo.svg" alt="AgriVision AI" class="footer-logo" />
+        <p>AgriVision AI — Empowering farmers with technology.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="pages/plant-identifier.html">Plant Identifier</a></li>
+          <li><a href="pages/disease-detector.html">Disease Detector</a></li>
+          <li><a href="pages/weather.html">Weather</a></li>
+          <li><a href="pages/ai-advisor.html">AI Advisor</a></li>
+          <li><a href="pages/crop-planner.html">Crop Planner</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>API Docs</h4>
+        <ul>
+          <li><a href="/api/docs" target="_blank">Swagger UI</a></li>
+          <li><a href="/api/redoc" target="_blank">ReDoc</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 AgriVision AI. Built with FastAPI, PlantNet, Perenual, OpenWeatherMap &amp; Gemini.</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+</body>
+</html>

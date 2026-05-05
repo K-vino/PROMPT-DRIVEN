@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Identifier — AgriVision AI</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/plant-identifier.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="../assets/images/logo.svg" alt="AgriVision AI" class="nav-logo" />
+      <span class="nav-title">AgriVision AI</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-link">Dashboard</a></li>
+      <li><a href="plant-identifier.html" class="nav-link active">Plant ID</a></li>
+      <li><a href="disease-detector.html" class="nav-link">Disease</a></li>
+      <li><a href="weather.html" class="nav-link">Weather</a></li>
+      <li><a href="ai-advisor.html" class="nav-link">AI Advisor</a></li>
+      <li><a href="crop-planner.html" class="nav-link">Crop Planner</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <main class="page-main">
+    <div class="page-header">
+      <h1>🌿 Plant Identifier</h1>
+      <p>Upload a photo or enter an image URL to identify any plant species.</p>
+    </div>
+
+    <!-- ── Tab switcher ──────────────────────────────────────────────── -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="upload">Upload Image</button>
+      <button class="tab-btn" data-tab="url">Image URL</button>
+      <button class="tab-btn" data-tab="care" id="careTabBtn">Plant Care Search</button>
+    </div>
+
+    <!-- Upload Tab -->
+    <div class="tab-panel active" id="tab-upload">
+      <div class="upload-zone" id="uploadZone">
+        <div class="upload-icon">📷</div>
+        <p>Drag &amp; drop an image here, or <label for="fileInput" class="upload-label">browse</label></p>
+        <input type="file" id="fileInput" accept="image/*" class="hidden" />
+        <p class="upload-hint">Supported formats: JPEG, PNG, WebP (max 10 MB)</p>
+      </div>
+      <div class="organ-selector">
+        <label class="form-label">Visible plant organ(s):</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="organ" value="auto" checked /> Auto-detect</label>
+          <label><input type="checkbox" name="organ" value="leaf" /> Leaf</label>
+          <label><input type="checkbox" name="organ" value="flower" /> Flower</label>
+          <label><input type="checkbox" name="organ" value="fruit" /> Fruit</label>
+          <label><input type="checkbox" name="organ" value="bark" /> Bark</label>
+        </div>
+      </div>
+      <button id="identifyUploadBtn" class="btn btn-primary btn-lg" disabled>
+        🔍 Identify Plant
+      </button>
+      <div id="imagePreview" class="image-preview hidden"></div>
+    </div>
+
+    <!-- URL Tab -->
+    <div class="tab-panel" id="tab-url">
+      <div class="form-group">
+        <label class="form-label" for="imageUrl">Image URL</label>
+        <input type="url" id="imageUrl" class="input" placeholder="https://example.com/plant.jpg" />
+      </div>
+      <div class="organ-selector">
+        <label class="form-label">Visible plant organ(s):</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="organUrl" value="auto" checked /> Auto-detect</label>
+          <label><input type="checkbox" name="organUrl" value="leaf" /> Leaf</label>
+          <label><input type="checkbox" name="organUrl" value="flower" /> Flower</label>
+          <label><input type="checkbox" name="organUrl" value="fruit" /> Fruit</label>
+        </div>
+      </div>
+      <button id="identifyUrlBtn" class="btn btn-primary btn-lg">🔍 Identify Plant</button>
+    </div>
+
+    <!-- Care Search Tab -->
+    <div class="tab-panel" id="tab-care">
+      <div class="form-group search-bar">
+        <input type="text" id="careSearch" class="input" placeholder="Search by plant name, e.g. Tomato…" />
+        <button id="careSearchBtn" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+
+    <!-- Results area -->
+    <div id="identifyResults" class="results-area hidden"></div>
+  </main>
+
+  <footer class="footer-simple">
+    <p>&copy; 2025 AgriVision AI</p>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/pages/plant-identifier.js"></script>
+</body>
+</html>

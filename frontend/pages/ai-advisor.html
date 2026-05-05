@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Advisor — AgriVision AI</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/ai-advisor.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="../assets/images/logo.svg" alt="AgriVision AI" class="nav-logo" />
+      <span class="nav-title">AgriVision AI</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-link">Dashboard</a></li>
+      <li><a href="plant-identifier.html" class="nav-link">Plant ID</a></li>
+      <li><a href="disease-detector.html" class="nav-link">Disease</a></li>
+      <li><a href="weather.html" class="nav-link">Weather</a></li>
+      <li><a href="ai-advisor.html" class="nav-link active">AI Advisor</a></li>
+      <li><a href="crop-planner.html" class="nav-link">Crop Planner</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <main class="advisor-layout">
+    <!-- Sidebar: quick prompts -->
+    <aside class="advisor-sidebar">
+      <h3>Quick Topics</h3>
+      <ul class="quick-prompts">
+        <li><button class="prompt-chip" data-prompt="What are the best practices for organic farming?">Organic Farming</button></li>
+        <li><button class="prompt-chip" data-prompt="How do I improve soil fertility naturally?">Soil Fertility</button></li>
+        <li><button class="prompt-chip" data-prompt="Explain integrated pest management (IPM) techniques.">IPM Techniques</button></li>
+        <li><button class="prompt-chip" data-prompt="What are the signs of nitrogen deficiency in crops?">Nitrogen Deficiency</button></li>
+        <li><button class="prompt-chip" data-prompt="How to set up a drip irrigation system for vegetables?">Drip Irrigation</button></li>
+        <li><button class="prompt-chip" data-prompt="What crops are best for arid regions?">Arid Crops</button></li>
+        <li><button class="prompt-chip" data-prompt="How to prevent post-harvest losses in grains?">Post-Harvest</button></li>
+      </ul>
+      <button id="clearChatBtn" class="btn btn-ghost btn-sm">🗑 Clear Chat</button>
+    </aside>
+
+    <!-- Chat area -->
+    <section class="chat-section">
+      <div class="chat-header">
+        <div class="advisor-avatar">🤖</div>
+        <div>
+          <h2 class="chat-title">AgriVision AI Advisor</h2>
+          <span class="chat-subtitle">Powered by Gemini 2.5 Flash</span>
+        </div>
+      </div>
+
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-message bot">
+          <div class="msg-bubble">
+            Hello! I'm your AgriVision AI advisor powered by Gemini 2.5 Flash. Ask me anything
+            about crop management, pest control, soil health, irrigation, or any agricultural topic.
+            How can I help you today? 🌾
+          </div>
+        </div>
+      </div>
+
+      <form class="chat-input-bar" id="chatForm">
+        <textarea
+          id="chatInput"
+          class="chat-textarea"
+          placeholder="Ask about crops, pests, soil, irrigation…"
+          rows="1"
+        ></textarea>
+        <button type="submit" class="btn btn-primary chat-send-btn" id="sendBtn">
+          ➤
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer-simple"><p>&copy; 2025 AgriVision AI</p></footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/pages/ai-advisor.js"></script>
+</body>
+</html>

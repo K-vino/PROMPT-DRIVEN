@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crop Planner — AgriVision AI</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/crop-planner.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="../assets/images/logo.svg" alt="AgriVision AI" class="nav-logo" />
+      <span class="nav-title">AgriVision AI</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-link">Dashboard</a></li>
+      <li><a href="plant-identifier.html" class="nav-link">Plant ID</a></li>
+      <li><a href="disease-detector.html" class="nav-link">Disease</a></li>
+      <li><a href="weather.html" class="nav-link">Weather</a></li>
+      <li><a href="ai-advisor.html" class="nav-link">AI Advisor</a></li>
+      <li><a href="crop-planner.html" class="nav-link active">Crop Planner</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <main class="page-main">
+    <div class="page-header">
+      <h1>📅 Crop Planner</h1>
+      <p>Browse supported crops, generate AI planting plans, and explore pest guides.</p>
+    </div>
+
+    <!-- Crop browser -->
+    <section class="crop-browser">
+      <div class="crop-filter-bar">
+        <input type="text" id="cropSearch" class="input" placeholder="Search crops…" />
+        <select id="categoryFilter" class="select">
+          <option value="">All Categories</option>
+          <option value="Cereal">Cereals</option>
+          <option value="Vegetable">Vegetables</option>
+          <option value="Legume">Legumes</option>
+          <option value="Fibre">Fibre</option>
+          <option value="Cash Crop">Cash Crops</option>
+          <option value="Fruit">Fruits</option>
+        </select>
+        <select id="seasonFilter" class="select">
+          <option value="">All Seasons</option>
+          <option value="kharif">Kharif</option>
+          <option value="rabi">Rabi</option>
+          <option value="summer">Summer</option>
+          <option value="annual">Annual</option>
+        </select>
+      </div>
+      <div class="crop-grid" id="cropGrid">
+        <!-- Populated by JS -->
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+
+    <!-- AI Planting Plan generator -->
+    <section class="planner-section" id="plannerSection">
+      <h2 class="section-title">Generate Planting Plan</h2>
+      <form id="planForm" class="plan-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="planCrop">Crop *</label>
+            <input type="text" id="planCrop" class="input" placeholder="e.g. Wheat" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="planLocation">Location *</label>
+            <input type="text" id="planLocation" class="input" placeholder="e.g. Punjab, India" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="planSoil">Soil Type</label>
+            <input type="text" id="planSoil" class="input" placeholder="e.g. loamy, clay…" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="planSize">Farm Size (hectares)</label>
+            <input type="number" id="planSize" class="input" value="1" min="0.1" step="0.1" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="planWater">Water Source</label>
+            <select id="planWater" class="select">
+              <option value="">Select…</option>
+              <option value="rain-fed">Rain-fed</option>
+              <option value="drip irrigation">Drip Irrigation</option>
+              <option value="flood irrigation">Flood Irrigation</option>
+              <option value="sprinkler">Sprinkler</option>
+              <option value="borewell">Borewell</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="planBudget">Budget Level</label>
+            <select id="planBudget" class="select">
+              <option value="">Select…</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">🧠 Generate AI Plan</button>
+      </form>
+      <div id="planResult" class="results-area hidden"></div>
+    </section>
+  </main>
+
+  <footer class="footer-simple"><p>&copy; 2025 AgriVision AI</p></footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/pages/crop-planner.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none">
+  <!-- Sky background -->
+  <rect width="480" height="360" fill="#f0faf4" rx="16"/>
+
+  <!-- Sun -->
+  <circle cx="380" cy="70" r="40" fill="#f5a623" opacity=".9"/>
+  <circle cx="380" cy="70" r="30" fill="#ffd166"/>
+
+  <!-- Ground -->
+  <ellipse cx="240" cy="290" rx="220" ry="60" fill="#4aad72" opacity=".3"/>
+  <rect x="20" y="280" width="440" height="60" fill="#2d7a4f" rx="8"/>
+
+  <!-- Wheat plant (left) -->
+  <g transform="translate(80,160)">
+    <line x1="0" y1="120" x2="0" y2="0" stroke="#8bc34a" stroke-width="3"/>
+    <ellipse cx="0" cy="0" rx="14" ry="30" fill="#aed581" transform="rotate(-10)"/>
+    <ellipse cx="-12" cy="20" rx="10" ry="24" fill="#c5e1a5" transform="rotate(-35)"/>
+    <ellipse cx="12" cy="20" rx="10" ry="24" fill="#c5e1a5" transform="rotate(35)"/>
+  </g>
+
+  <!-- Tomato plant (centre) -->
+  <g transform="translate(230,110)">
+    <line x1="0" y1="170" x2="0" y2="0" stroke="#558b2f" stroke-width="4"/>
+    <!-- leaves -->
+    <ellipse cx="-20" cy="60" rx="22" ry="12" fill="#66bb6a" transform="rotate(-30 -20 60)"/>
+    <ellipse cx="20" cy="40" rx="22" ry="12" fill="#81c784" transform="rotate(30 20 40)"/>
+    <!-- tomatoes -->
+    <circle cx="-15" cy="90" r="14" fill="#ef5350"/>
+    <circle cx="18" cy="100" r="12" fill="#e53935"/>
+    <circle cx="0" cy="80" r="10" fill="#f44336"/>
+    <!-- stem ends -->
+    <line x1="-15" y1="76" x2="-12" y2="68" stroke="#558b2f" stroke-width="2"/>
+  </g>
+
+  <!-- Wheat plant (right) -->
+  <g transform="translate(370,180)">
+    <line x1="0" y1="100" x2="0" y2="0" stroke="#8bc34a" stroke-width="3"/>
+    <ellipse cx="0" cy="0" rx="12" ry="26" fill="#aed581" transform="rotate(8)"/>
+    <ellipse cx="-10" cy="18" rx="9" ry="20" fill="#c5e1a5" transform="rotate(-30)"/>
+    <ellipse cx="10" cy="18" rx="9" ry="20" fill="#c5e1a5" transform="rotate(30)"/>
+  </g>
+
+  <!-- AI circuit overlay (top-left) -->
+  <g opacity=".18" stroke="#2d7a4f" stroke-width="1.5" fill="none">
+    <circle cx="60" cy="60" r="18"/>
+    <circle cx="60" cy="60" r="8" fill="#2d7a4f"/>
+    <line x1="78" y1="60" x2="100" y2="60"/>
+    <line x1="60" y1="42" x2="60" y2="20"/>
+    <circle cx="110" cy="60" r="6" fill="#2d7a4f"/>
+    <circle cx="60" cy="12" r="6" fill="#2d7a4f"/>
+  </g>
+
+  <!-- Label -->
+  <text x="240" y="348" text-anchor="middle" font-family="Segoe UI, sans-serif"
+        font-size="13" fill="#fff" font-weight="600" opacity=".85">
+    AgriVision AI — Smart Farming Platform
+  </text>
+</svg>
